@@ -4,6 +4,8 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const OneToOneRouter= require("./routers/one-to-one")
+const OneToManyRouter= require("./routers/one-to-many")
+
 const mongoString = process.env.DATABASE_URL
 mongoose.connect(
     'mongodb+srv://Relationship:Relationship@cluster0.hhvwgfd.mongodb.net/relationshipy',
@@ -41,3 +43,4 @@ app.use(bodyParser.json())
 
 // app.use('', ProductsRouter);
 app.use('',OneToOneRouter)
+app.use('',OneToManyRouter)
